@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>viggokalkulator</title>
+    <link rel="stylesheet" href="viggo.css" media="screen">
+</head>
+<body>
+    <!-- Navigasjonsbar på toppen -->
+    <div class="topnav">
+        <a class="active" href="forside.html">Forside</a>
+        <a href="golf.html">Golf</a>
+        <a href="viggo.html">Viggo</a>
+        <a href="amerikaner.html">Amerikaner</a>
+        <a href="spardam.html">Spar-dam</a>
+        <a href="casino.html">Casino</a>
+        <!-- <a href="#about" class="split">Regler</a>  Skal kun vises inne på spillet--> 
+      </div>
+    <div id="overskrift">VIGGOKALKULATOR</div>
+    <button onclick="add()" class="clearfix">Trykk her</button>
+    <!-- Tabell for a fylle inn poeng -->
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Mama</th>
+                    <th>Akse</th>
+                    <th>Billy</th>
+                    <th>Papa</th>
+                    <th>Bølla</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="number" name="p1" id="p1"> </td>
+                    <td><input type="number" name="p5" id="p5"></td>
+                    <td> <input type="number" name="p2" id="p2"> </td>
+                    <td> <input type="number" name="p3" id="p3"> </td>
+                    <td> <input type="number" name="p4" id="p4"></td>
+                </tr>
+                <tr>
+                    <td><div id="lis1"></div></td>
+                    <td><div id="lis5"></div></td>
+                    <td><div id="lis2"></div></td>
+                    <td><div id="lis3"></div></td>
+                    <td><div id="lis4"></div></td>
+                </tr>
+                <tr>
+                <td><div id="line"></div></td>
+                <td><div id="line"></div></td>
+                <td><div id="line"></div></td>
+                <td><div id="line"></div></td>
+                <td><div id="line"></div></td>
+            </tr>
+                <tr>
+                    <td><div id="nu1" type="number" class="score"></td>
+                    <td><div id="nu5" type="number" class="score"></div></td>
+                    <td><div id="nu2" type="number" class="score"></div></td>
+                    <td><div id="nu3" type="number" class="score"></div></td>
+                    <td><div id="nu4" type="number" class="score"></div></td>
+                </tr>
+               
+            </tbody>
+        </table>
+    </div>
+    <script>
+    const points=[];
+    const pointa=[];
+    const pointb=[];
+    const pointt=[];
+    const pointAnna=[];
+    let y=0;
+    let b=0;
+    let yy=0;
+    let bb=0;
+    let yanna=0;
+    function add(){
+        for(let i = 0; i < 1; i++){
+        x=parseInt(document.getElementById("p1").value);
+        a=parseInt(document.getElementById("p2").value);
+        xx=parseInt(document.getElementById("p3").value);
+        vv=parseInt(document.getElementById("p4").value);
+        xanna=parseInt(document.getElementById("p5").value);
+        points.push(x);
+        pointa.push(a);
+        pointb.push(xx);
+        pointt.push(vv);
+        pointAnna.push(xanna);
+        y+=x;
+        b+=a;
+        yy+=xx;
+        bb+=vv;
+        yanna+=xanna;
+        z=points.join('\r\n');
+        c=pointa.join('\r\n');
+        zz=pointb.join('\r\n');
+        pp=pointt.join('\r\n');
+        yyanna=pointAnna.join('\r\n');
+        i++;
+        if(y>=52){
+
+            y="Du er viggo";
+            alert("Mama er Viggo")
+        }
+        if(b>=52){
+
+            b="Du er viggo";
+            alert("Billy er Viggo")
+        }
+        if(yy>=52){
+
+            yy="Du er viggo";
+            alert("Papa er Viggo")
+        }
+        if(bb>=52){
+            vv="Du er viggo";
+            alert("Bølla er Viggo med")
+        }
+        if(yanna>=52){
+            vv="Du er viggo";
+            alert("Anna er Viggo med") 
+        }
+        }
+        document.getElementById("lis1").innerHTML=z;
+        document.getElementById("nu1").innerHTML=y;
+        document.getElementById("lis2").innerHTML=(c);
+        document.getElementById("nu2").innerHTML=b;
+        document.getElementById("lis3").innerHTML=(zz);
+        document.getElementById("nu3").innerHTML=yy;
+        document.getElementById("lis4").innerHTML=pp;
+        document.getElementById("nu4").innerHTML=bb;
+        document.getElementById("lis5").innerHTML=yyanna;
+        document.getElementById("nu5").innerHTML=yanna;
+        document.getElementById('p1').value=null;
+        document.getElementById('p2').value=null;
+        document.getElementById('p3').value=null;
+        document.getElementById("p4").value=null;
+        document.getElementById("p5").value=null;
+
+
+    }
+    
+
+    </script>
+</body>
+</html>
